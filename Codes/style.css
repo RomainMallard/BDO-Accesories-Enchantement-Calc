@@ -1,0 +1,35 @@
+.custom-dropdown {
+    position: relative;
+    display: inline-block; /* Display the dropdown as inline-block to control its width */
+    width: 200px; /* Adjust the width as needed */
+}
+
+/* Style for the select element */
+.custom-dropdown select {
+    width: 100%; /* Make the select element take up the full width of the container */
+    padding-right: 30px; /* Add space to the right for the image */
+    cursor: pointer; /* Change cursor to a pointer on hover */
+}
+
+/* Style for the image */
+.custom-dropdown img {
+    position: absolute;
+    top: 0;
+    right: 0; /* Position the image to the right */
+    height: 100%; /* Make the image the same height as the select element */
+    pointer-events: none; /* Ensure the image doesn't interfere with dropdown interaction */
+}
+
+/* Hide the default dropdown arrow */
+.custom-dropdown select::-ms-expand,
+.custom-dropdown select::-webkit-select-arrow {
+    display: none;
+}
+
+ {
+    blalbalb
+    lelelel
+    lilil 
+    lololo
+
+ }

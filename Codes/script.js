@@ -1,66 +1,52 @@
-document.addEventListener("DOMContentLoaded", function()
+document.addEventListener("DOMContentLoaded", function()      
 {
-    const fsInputs = document.querySelectorAll('.fs-input');
+    const fsInputs = document.querySelectorAll('.fs-input'); // take Base FS number
     fsInputs.forEach(input => 
     {
-        input.addEventListener('input', fetchDataAndCalculate);
+        input.addEventListener('input', fetchDataAndCalculate);// Call API for prices and calculate cafted prices + display
     });
 
     const dropdown = document.getElementById('dropdown');
     dropdown.addEventListener('change', fetchDataAndCalculate);
-    //dropdown.addEventListener('change', handleDropdownChange );
+    
 
     createItemsSelectionDropdown();
     calculateChances();
    
-    // ...other event listeners...
 
-     // Call the initial functions
 
 }); // End of event listening call
 
-const optionArray = ["11630-Laytenn's Necklace","11834-Narc earring", "12237-Tungrad Belt", "12031-Crescent Ring", "11828-Tungrad Earring", "12237-Tungrad Belt" ,"11629-Tungrad Necklace", "12061-Tungrad Ring", "12042-Ronaros Ring", "12060-Ruins Ring", "11607-Ogre Necklace", "11853-Black Distortion", "12230-Basilik Belt", "12236-Valtara Eclipsed Belt"]
-optionArray.sort((a, b) => {
+//    vvvvv Creating an array of the item Id + Name,  (id to use in the API, reused for image ID later)
+const ItemArray = ["11630-Laytenn's Necklace","11834-Narc earring", "12237-Tungrad Belt", "12031-Crescent Ring", "11828-Tungrad Earring", "12237-Tungrad Belt" ,"11629-Tungrad Necklace", "12061-Tungrad Ring", "12042-Ronaros Ring", "12060-Ruins Ring", "11607-Ogre Necklace", "11853-Black Distortion", "12230-Basilik Belt", "12236-Valtara Eclipsed Belt"]
+
+ItemArray.sort((a, b) => { //sort by alphabetical order
     const textA = a.split('-')[1];
     const textB = b.split('-')[1];
     return textA.localeCompare(textB);
 });
 
- // Function to create and populate the dropdown from the array
-function createItemsSelectionDropdown() {
+ // Function to create and populate the dropdown from the ItemArray
+function createItemsSelectionDropdown() 
+{
 
-const dropdown = document.getElementById("dropdown"); // Select already created dropdown
+  const dropdown = document.getElementById("dropdown"); // Select already created dropdown
     
-    optionArray.forEach(optionString => {
-        const [value, textContent] = optionString.split('-');
-        const option = document.createElement("option");
-        option.value = value;
-        option.textContent = textContent;
-        
-                    // TRYING TO MAKE IMAGE
-                    //const paddedValue = value.padStart(8,'0'); // Add leading zeros if necessary
-                    //const imgLink = `BDO_ITEMS/${paddedValue}.jpeg`; // Replace 'path_to_your_images' with your actual image folder path
-                    //const itemImageElement = document.getElementById("itemImageElem");
-                    ////img.alt = textContent; // Add alt text for accessibility
-                    //const existingImgContent = itemImageElement.querySelector("img");
-                    //existingImgContent.src = imgLink;
-        
-       // img.alt = textContent; // Add alt text for accessibility
-
-        dropdown.appendChild(option);       
-        //console.log("Acces name :" + option.textContent)
-        //console.log("Acces ID :" + option.value)
-   
-    });
+  ItemArray.forEach(ItemArray => 
+  {
+      const [value, textContent] = ItemArray.split('-'); // Processing the Item Array
+      const ItemOption = document.createElement("option");
+      ItemOption.value = value;
+      ItemOption.textContent = textContent;
+      dropdown.appendChild(ItemOption);                     // add item to dropdown
+  });
  
-    dropdown.addEventListener("change", function() {
-        selectedValue = parseInt(this.value);
+  dropdown.addEventListener("change", function() {   //debug Dropdown ID value
+        selectedValue = parseInt(this.value); // "this" allow targetting of the valure of the DD through the event listener
         console.log( "int ID" + selectedValue);
-    }); 
+  }); 
 }
-dropdown.addEventListener("change", function() {
-    selectedValue = parseInt(this.value);
-console.log( "int ID_outside" + selectedValue)});
+
 
 let PRIupgradePersent;
 let DUOupgradePersent;
@@ -69,15 +55,15 @@ let TETupgradePersent;
 let PENupgradePersent;
 
 
-function calculateChances() {
+function calculateChances() {//Global Chance claculation function
   PRIupgradeChance();
   DUOupgradeChance();
   TRIupgradeChance();
   TETupgradeChance();
   PENupgradeChance();
 }
-
-//ALL LEVEL UPGRADE CHANCES
+//  |||||||
+//  vvvvvvv ALL LEVEL UPGRADE CHANCES
 
 function PRIupgradeChance() {
   let PRIupgradePersent;
@@ -174,17 +160,18 @@ function PENupgradeChance() {
 }
 
 
-async function fetchDataAndCalculate() {
+async function fetchDataAndCalculate() { // Fun to Fetch from the markeplaace API and calculate crafted price
     
-    const averagePrices = [];
+  
 
     try {
+      const averagePrices = [];   // init prices off the 6 level of enchantment
       // Get the selected value from the dropdown menu
       const dropdown = document.getElementById('dropdown');
       const DropdownValue = dropdown.value;
   
-      // Get the table
-      const table = document.getElementById('yourTableId');
+      // Get the tableElement
+      const table = document.getElementById('EhanceTableId');
   
       // Initialize an array to store promises for each row
       const fetchPromises = [];
@@ -231,26 +218,16 @@ async function fetchDataAndCalculate() {
       console.error('An error occurred:', error);
     }
   }
-  //Add event listenenet on FS entry
-window.onload = function(){
-
-    calculateChances();
-    document.getElementById("UserPRIFS").addEventListener("input", calculateChances);
-    document.getElementById("UserDUOFS").addEventListener("input", calculateChances);
-    document.getElementById("UserTRIFS").addEventListener("input", calculateChances);
-    document.getElementById("UserTETFS").addEventListener("input", calculateChances);
-    document.getElementById("UserPENFS").addEventListener("input", calculateChances);
-    
-    fetchDataAndCalculate();
-    
-    };
-    
-document.getElementById("dropdown");
-  // Call the function when needed, perhaps when a button is clicked
-  // Example:
- //const button = document.getElementById('CALCULUS');
- //button.addEventListener('click', fetchDataAndCalculate);
 
   
+
+// calculate chances and prices , on window load
+window.onload = function()
+{
+    calculateChances();  
+    fetchDataAndCalculate()   
+};
+    
+
  
 
