@@ -1,9 +1,11 @@
 document.addEventListener("DOMContentLoaded", function()      
 {
+
     const fsInputs = document.querySelectorAll('.fs-input'); // take Base FS number
     fsInputs.forEach(input => 
     {
-        input.addEventListener('input', fetchDataAndCalculate);// Call API for prices and calculate cafted prices + display
+        input.addEventListener('input', calculateChances);      // add event listenenr to Call API for prices and calculate cafted prices + display
+        input.addEventListener('input', fetchDataAndCalculate);
     });
 
     const dropdown = document.getElementById('dropdown');
