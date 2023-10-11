@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function()
 }); // End of event listening call
 
 //    vvvvv Creating an array of the item Id + Name,  (id to use in the API, reused for image ID later)
-const ItemArray = ["11630-Laytenn's Necklace","11834-Narc earring", "12237-Tungrad Belt", "12031-Crescent Ring", "11828-Tungrad Earring", "12237-Tungrad Belt" ,"11629-Tungrad Necklace", "12061-Tungrad Ring", "12042-Ronaros Ring", "12060-Ruins Ring", "11607-Ogre Necklace", "11853-Black Distortion", "12230-Basilik Belt", "12236-Valtara Eclipsed Belt"]
+const ItemArray = ["11630-Laytenn's Necklace","11834-Narc earring", "12031-Crescent Ring", "11828-Tungrad Earring", "12237-Tungrad Belt" ,"11629-Tungrad Necklace", "12061-Tungrad Ring", "12042-Ronaros Ring", "12060-Ruins Ring", "11607-Ogre Necklace", "11853-Black Distortion", "12230-Basilik Belt", "12236-Valtara Eclipsed Belt"]
 
 ItemArray.sort((a, b) => { //sort by alphabetical order
     const textA = a.split('-')[1];
@@ -177,7 +177,7 @@ async function fetchDataAndCalculate() { // Fun to Fetch from the markeplaace AP
       const fetchPromises = [];
   
       // Loop through each row in the table
-      for (let i = 0; i < table.rows.length; i++) {
+      for (let i = 1; i < table.rows.length; i++) {
         const RowNumber = i; // This is the row number
   
         // Create the API URL for this row
