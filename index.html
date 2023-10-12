@@ -11,76 +11,78 @@
 <body>
 
 
+<div class="Cacl">
     <select id="dropdown"></select> <!-- DropDown menu to select item to enchant -->
  
- <div id="itemImageElem" style="position: relative; left: 400px; top: px;display: flex;">
+    <div id="itemImageElem">
+   
+ <img src="" alt="Your Image Alt Text"><!-- Item Image-->
+   
+   
+   </div> <!-- table div -->
+   
+   
+       <table id="EhanceTableId"> <!--  -->
+           <tr class="header">
+               <th> LEVEL</th>
+               <th>FS</th>
+               <th>Chance</th>
+               <th>Market Cost</th>
+               <th>Self Enchanted Cost</th>
+           </tr>
+   
+           <tr>
+               <td>PRI</td>
+               <td class="input"> <input class="fs-input" name="FS" size="1" value="18" id="UserPRIFS"></td>
+               <td id="PRIUPchance" class="chance"> </td>
+               <td></td>
+               <td></td>
+   
+   
+           </tr>
+   
+           <tr>
+               <td>DUO</td>
+               <td class="input"> <input class="fs-input" type="text" name="FS" size="1" value="40" id="UserDUOFS"></td>
+               <td id="DUOUPchance" class="chance"> </td>
+               <td></td>
+               <td></td>
+   
+           </tr>
+   
+           <tr>
+               <td>TRI</td>
+               <td class="input"> <input class="fs-input" type="text" name="FS" size="1" value="44" id="UserTRIFS"></td>
+               <td id="TRIUPchance" class="chance"> </td>
+               <td></td>
+               <td></td>
+   
+           </tr>
+   
+           <tr>
+               <td>TET</td>
+               <td class="input"> <input class="fs-input" type="text" name="FS" size="1" value="110" id="UserTETFS"></td>
+               <td id="TETUPchance" class="chance"> </td>
+               <td></td>
+               <td></td>
+   
+           </tr>
+   
+           <tr>
+               <td>PEN</td>
+               <td class="input"> <input class="fs-input" type="text" name="FS" size="1" value="220" id="UserPENFS"></td>
+               <td id="PENUPchance" class="chance"> </td>
+               <td></td>
+               <td></td>
+           </tr>
+   
+   
+       </table>
+   
+         
+</div>
 
-    <img src="" alt="Your Image Alt Text"><!-- Item Image-->
 
-
-</div> <!-- table div -->
-
-
-    <table id="EhanceTableId"> <!--  -->
-        <tr>
-            <td> LEVEL</td>
-            <td>FS</td>
-            <td>Chance</td>
-            <td>Market Cost</td>
-            <td>Crafted Cost</td>
-        </tr>
-
-        <tr>
-            <td>PRI</td>
-            <td> <input class="fs-input" name="FS" size="1" value="18" id="UserPRIFS"></td>
-            <td id="PRIUPchance"> </td>
-            <td></td>
-            <td></td>
-
-
-        </tr>
-
-        <tr>
-            <td>DUO</td>
-            <td> <input class="fs-input" type="text" name="FS" size="1" value="40" id="UserDUOFS"></td>
-            <td id="DUOUPchance"> </td>
-            <td></td>
-            <td></td>
-
-        </tr>
-
-        <tr>
-            <td>TRI</td>
-            <td> <input class="fs-input" type="text" name="FS" size="1" value="44" id="UserTRIFS"></td>
-            <td id="TRIUPchance"> </td>
-            <td></td>
-            <td></td>
-
-        </tr>
-
-        <tr>
-            <td>TET</td>
-            <td> <input class="fs-input" type="text" name="FS" size="1" value="110" id="UserTETFS"></td>
-            <td id="TETUPchance"> </td>
-            <td></td>
-            <td></td>
-
-        </tr>
-
-        <tr>
-            <td>PEN</td>
-            <td> <input class="fs-input" type="text" name="FS" size="1" value="220" id="UserPENFS"></td>
-            <td id="PENUPchance"> </td>
-            <td></td>
-            <td></td>
-
-
-        </tr>
-
-
-    </table>
-
-    
    
     
     <script src="script.js"></script>

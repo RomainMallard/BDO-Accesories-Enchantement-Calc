@@ -1,35 +1,59 @@
-.custom-dropdown {
-    position: relative;
-    display: inline-block; /* Display the dropdown as inline-block to control its width */
-    width: 200px; /* Adjust the width as needed */
+/*
+
+#353030 Brown background
+#312f31 Grey
+#18181a INVENTORY SLOT BLACK
+#725a39 Inventory head brow
+#ffedd4  writting beige 
+
+*/
+
+body {
+    
+    transform: scale(3);
+    transform-origin: 0 0; /* Adjust the origin as needed */
+  color: #e4cfb2;
+    background-color: #353030;
 }
 
-/* Style for the select element */
-.custom-dropdown select {
-    width: 100%; /* Make the select element take up the full width of the container */
-    padding-right: 30px; /* Add space to the right for the image */
-    cursor: pointer; /* Change cursor to a pointer on hover */
+th{
+  
+   
+}
+.header{
+   
+    background-color: #725a39;
+}
+table {
+    
+    border-radius: 5px 5px 0px 0px; 
+    overflow: hidden;
+    border: 3px solid brown;
+  
+}
+table, th, td{
+    
+    border-spacing: 0px;
+  
+    border: 1px solid #725a39;
 }
 
-/* Style for the image */
-.custom-dropdown img {
-    position: absolute;
-    top: 0;
-    right: 0; /* Position the image to the right */
-    height: 100%; /* Make the image the same height as the select element */
-    pointer-events: none; /* Ensure the image doesn't interfere with dropdown interaction */
+td, input{
+    text-align: center;
+    border-spacing: 0px;
+    padding: 0px;
+    background-color: black;
 }
 
-/* Hide the default dropdown arrow */
-.custom-dropdown select::-ms-expand,
-.custom-dropdown select::-webkit-select-arrow {
-    display: none;
+input{
+    border: 0px;
+    background-color: black;
+    color: beige;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
 }
-
- {
-    blalbalb
-    lelelel
-    lilil 
-    lololo
-
- }
+td{
+    background-color: #18181a;
+    text-align: right;
+}

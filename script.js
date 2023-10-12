@@ -149,7 +149,7 @@ function PENupgradeChance() {
 
 
 
-  PENupgradePersent = .5 + (PENFS * .05)
+  PENupgradePersent = .5 + (PENFS * 0.05)
 
 
 
@@ -179,7 +179,7 @@ async function fetchDataAndCalculate() { // Fun to Fetch from the markeplaace AP
       const fetchPromises = [];
   
       // Loop through each row in the table
-      for (let i = 1; i < table.rows.length; i++) {
+      for (let i = 0; i < table.rows.length; i++) {
         const RowNumber = i; // This is the row number
   
         // Create the API URL for this row
@@ -193,19 +193,22 @@ async function fetchDataAndCalculate() { // Fun to Fetch from the markeplaace AP
         const resultData = data.resultMsg.split("-");
         const allValues = resultData.map(value => parseFloat(value));
         const sum = allValues.reduce((total, value) => total + value, 0);
-        const AveragePrice = parseInt(sum / allValues.length);
+        var AveragePrice = parseInt(sum / allValues.length);
         averagePrices.push(AveragePrice);       
   
         // Get the CraftingCoef from the 3rd TD in the current row
         const craftingCoef = parseFloat(table.rows[i].cells[2].textContent);
-        const craftingCost = (averagePrices[i-1] + averagePrices[0]) * (1 / (craftingCoef/100));
+        var craftingCost = (averagePrices[i-1] + averagePrices[0]) * (1 / (craftingCoef/100));
         // Calculate CraftingCost
        
-  
+        
         // Update the 4th and 5th TD in the current row with AveragePrice and CraftingCost
-        table.rows[i].cells[3].textContent = parseInt(AveragePrice);
-        table.rows[i].cells[4].textContent = parseInt(craftingCost);
-
+       // table.rows[i].cells[3].textContent = parseInt(AveragePrice);
+       // table.rows[i].cells[4].textContent = parseInt(craftingCost);
+       if(i>0){ 
+        table.rows[i].cells[3].textContent = (AveragePrice).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        table.rows[i].cells[4].textContent = parseInt(craftingCost).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+       };
 
         //TRYING TO MAKE IMAGE
         const paddedValue = DropdownValue.padStart(8,'0'); // Add leading zeros if necessary
