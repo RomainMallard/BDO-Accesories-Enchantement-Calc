@@ -1,0 +1,86 @@
+
+/*
+
+#353030 Brown
+#312f31 Grey
+#18181a INVENTORY SLOT BLACK
+#735b39 Inventory head brow
+#ffedd4  writting beige 
+
+*/
+body {
+    background-color: #312f31; 
+  }
+
+table {
+   
+    /*
+    border-radius: 10px;
+    overflow: hidden;
+*/
+    background-color: #312f31;
+    table-layout: fixed;
+    width: 100%;
+   border-collapse: collapse;
+    border: 3px solid #735b39;
+    color:  #ffedd4;
+    
+   
+}
+
+th{
+    color: aqua;
+    text-align: center;
+}
+
+.header {
+    background-color: #735b39;
+    color: #ffedd4;
+    text-shadow: 1px 1px 1px black;
+
+
+    
+}
+
+ th:nth-child(1){
+    width:2%;
+    
+  
+  }
+
+  th:nth-child(2){
+    width: 2%;
+    
+  }
+  th:nth-child(3){
+    width: 2%;
+}
+
+th:nth-child(4){
+  width: 10%;
+}
+th:nth-child(5){
+    width: 15%;
+  }
+  
+
+   
+
+.fs-input {
+
+    width: calc(100%);
+    overflow: hidden; 
+    background-color: #18181a;
+    border: 3px solid #735b39;
+    border-collapse: collapse;
+    color: white;
+    align-items: center;
+}
+table, th, td {
+    margin: 10px;
+    border: 1px solid #735b39;
+}
+.chance{
+text-align: center;
+
+}
