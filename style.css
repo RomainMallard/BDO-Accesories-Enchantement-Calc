@@ -8,25 +8,28 @@
 
 */
 
-body {
-    
-    transform: scale(3);
-    transform-origin: 0 0; /* Adjust the origin as needed */
-  color: #e4cfb2;
-    background-color: #353030;
- 
+
+
+
+body {   
+color: #e4cfb2;
+background-color: #353030;
 }
 
-th{
-  
-   
-}
-.header{
-   
+.header{   
     background-color: #725a39;
 }
+
+select{
+ font-size: 50px;
+ background-color: #18181a ;
+ color: #e4cfb2;
+
+}
+
 table {
-    
+    transform: scale(3);
+    transform-origin: 0 0;
     border-radius: 5px 5px 0px 0px; 
     overflow: hidden;
     border: 3px solid brown;
@@ -59,4 +62,32 @@ input{
 td{
     background-color: #18181a;
     text-align: right;
+}
+#nav_barbar {
+    display: flex; /* Use flexbox to make the buttons stay in a line */
+    justify-content: space-around; /* Space the buttons evenly */
+    
+    padding: 00px;
+}
+
+.TabLink {
+    border: 0px;
+    background-color: #555;
+    color: #e4cfb2;
+    cursor: pointer;
+    font-size: 50px;
+    padding: 00px; /* Add some padding to make the buttons look nice */
+    width: 50%;
+}
+
+body{
+  margin-left: 0%;
+  margin-right:0% ;
+  margin-top: 50px;
+}
+#PageContent{
+    margin: 50px;
+}
+#AboutThisProject{
+    font-size: 30px;
 }

@@ -9,20 +9,20 @@
 </head>
 
 <body>
+   
+<div id="nav_barbar">
+    <button class="TabLink" onclick="openPage('EnchantementTable')" id="defaultOpen"> Enchantement Table</button>
+    <button class="TabLink" onclick="openPage('AboutThisProject')"> About This Project</button>
+</div>
+<div id="PageContent">
 
-
-<div class="Cacl">
-    <select id="dropdown"></select> <!-- DropDown menu to select item to enchant -->
- 
-    <div id="itemImageElem">
-   
- <img src="" alt="Your Image Alt Text"><!-- Item Image-->
-   
-   
-   </div> <!-- table div -->
-   
-   
-       <table id="EhanceTableId"> <!--  -->
+<div id="EnchantementTable" class="tabContent" > 
+    <div class="Calc">
+        <select class="custom-select" id="dropdown"> sele</select> <!-- DropDown menu to select item to enchant -->
+        <div id="itemImageElem">
+            <img src="" alt="Your Image Alt Text"><!-- Item Image-->
+        </div> 
+        <table id="EhanceTableId"> <!-- table div -->
            <tr class="header">
                <th> LEVEL</th>
                <th>FS</th>
@@ -77,13 +77,27 @@
            </tr>
    
    
-       </table>
-   
-         
+        </table>
+    </div>
+</div><div id="AboutThisProject" class="tabContent"><H1>About this project</H1>
+   <p>This is a little enchantement chart/table i made to learn WebDev. <br>
+    It aim at helping user choose accesories to enchant in the long run (more than 1 success item, to regulate the RNG) for profit. <br> 
+    It is usisng the <a href="https://documenter.getpostman.com/view/4028519/TzK2bEVg">BDO Market API</a> to get item prices in the 90 last days, on the EU server </p>
+
+    <H2>Future Features</H2>
+    <ul> 
+        <li> Cron Usage</li>
+        <li>Custom timespan for market prices</li>
+        <li>Prices doing all the enchantement (starting from bases bases)</li>
+        <li> DataCenter selector (EU only currently)</li>
+        <li>Color coding</li>
+    </ul>
+
+    <p></p>
 </div>
 
 
-   
+</div>  
     
     <script src="script.js"></script>
 

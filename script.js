@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function()      
 {
-
+  
     const fsInputs = document.querySelectorAll('.fs-input'); // take Base FS number
     fsInputs.forEach(input => 
     {
@@ -14,10 +14,41 @@ document.addEventListener("DOMContentLoaded", function()
 
     createItemsSelectionDropdown();
     calculateChances();
-   
-
-
+  //document.getElementById("defaultOpen").click();
+     // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
 }); // End of event listening call
+
+// vvvvvvvvvvvvv  Nav bar creation
+
+function openPage(pageName) {
+  // Hide all elements with class="tabcontent" by default */
+  var i, tabcontent;
+  tabcontent = document.getElementsByClassName("tabContent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Remove the background color of all tablinks/buttons
+ 
+
+  // Show the specific tab content
+  document.getElementById(pageName).style.display = "block";
+
+  // Add the specific color to the button used to open the tab content
+
+}
+
+// Get the element with id="defaultOpen" and click on it
+//document.getElementById("defaultOpen").click();
+
+                                      //function openPage(pageName){
+                                      //var i, tabcontent,tablink;
+                                      //tabcontent = document.getElementsByClassName("tabcontent")
+                                      //
+                                      //}
+
+
 
 //    vvvvv Creating an array of the item Id + Name,  (id to use in the API, reused for image ID later)
 const ItemArray = ["11630-Laytenn's Necklace","11834-Narc earring", "12031-Crescent Ring", "11828-Tungrad Earring", "12237-Tungrad Belt" ,"11629-Tungrad Necklace", "12061-Tungrad Ring", "12042-Ronaros Ring", "12060-Ruins Ring", "11607-Ogre Necklace", "11853-Black Distortion", "12230-Basilik Belt", "12236-Valtara Eclipsed Belt"]
